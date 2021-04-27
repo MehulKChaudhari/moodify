@@ -19,7 +19,7 @@ export default function WebcamComponent (){
         );
       
         return (
-          <>
+          <div>
             <Webcam
               audio={false}
               height={720}
@@ -29,7 +29,7 @@ export default function WebcamComponent (){
               videoConstraints={videoConstraints}
             />
             <button onClick={capture}>Capture photo</button>
-          </>
+          </div>
         );
       };
 }
