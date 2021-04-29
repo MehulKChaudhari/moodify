@@ -15,8 +15,15 @@ import img5 from "../../Assets/image5.jpeg";
 import img6 from "../../Assets/image6.jpeg";
 import img7 from "../../Assets/image7.jpeg";
 import ch from "../../Assets/camera-holder.jpeg";
+import Webcam from "react-webcam"
 
 export default function App() {
+  const videoConstraints = {
+    width: 1280,
+    height: 720,
+    aspectRatio: 0.6666666667
+  };
+  
   return (
     <>
       <div className="main">
@@ -119,11 +126,15 @@ export default function App() {
             </div>
             <div className="recognize-div">
               <div className="webcam">
-                <img src={ch} />
+                {/* <img src={ch} /> */}
                 {/* <WebcamComponent /> */}
+                <Webcam 
+                  videoConstraints={videoConstraints}
+                  className="webcam-opt" 
+                />
               </div>
               <div className="refresh-button">
-                <button>Refresh</button>
+                <button>Search Playlist</button>
               </div>
             </div>
             <div className="prediction-opt">
