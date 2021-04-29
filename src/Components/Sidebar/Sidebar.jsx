@@ -138,7 +138,11 @@ export default function App() {
               </div>
             </div>
             <div className="prediction-opt">
-              <div></div>
+              <div>
+                <p>Current Mood</p>
+                <p>😊</p>
+                <p>Happy</p>
+              </div>
             </div>
           </div>
         </div>

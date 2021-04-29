@@ -224,4 +224,9 @@
   background: rgba(196, 196, 196, 0.1);
   border-radius: 8px;
   height: 95%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
 }
