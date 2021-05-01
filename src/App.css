@@ -78,11 +78,7 @@ a:hover{
   width: 100%;
 }
 
-.side-nav__list-item{
-  /* display: flex; */
-  /* width:100%;
-  margin: 0 auto; */
-}
+
 .side-nav__list-item:hover{
   display: flex;
   border:1px solid 
