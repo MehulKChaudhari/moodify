@@ -1,33 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+h4{
+  font-family: 'Montserrat', sans-serif;
+  color: var(--heading-color);
+  text-align: left;
+}
+a{
+  text-decoration: none;
+  color: var(--anchor-color);
+}
+a:hover{
+  color:none;
+}
 
 .main {
   display: flex;
-  /* height: 90vh; */
+  height: 90vh;
   justify-content: center;
   background: white;
   gap: 2px;
 }
 
-.main > .home {
-  /* flex: 1 1 auto; */
-  text-align: center;
-}
-
 .side-nav {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex-grow: 1;
   align-items: center;
-  justify-content: space-between;
   font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
   background: #0b0d13e5;
   flex-wrap: wrap;
 }
@@ -35,10 +40,11 @@
   flex-grow: 3;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   background: #0b0d13e5;
   flex-wrap: wrap;
-  padding: 2rem 4rem;
+  padding: 2rem 4rem 0 4rem;
+  gap: 2rem;
 }
 /* .side-nav,
 .home {
@@ -46,47 +52,69 @@
 } */
 
 .sidenav-logo {
-  /* position: absolute; */
-  width: 350px;
-  height: 304px;
-  /* left: 0px; */
+  width: 200px;
+  height: 200px;
   text-align: center;
 }
 
-#options {
-  height: 20vh;
+.sidenav__container-top{
   display: flex;
   flex-direction: column;
-}
-#copyright {
-  color: #c0c3cabf;
-  margin: 100px 0 0 0;
-}
-#copyright > p > span {
-  color: pink;
+  /* justify-content: center; */
+  /* align-items:center; */
+  gap: 3rem;
 }
 
-.nav-link {
+.side-nav__list {
+  list-style: none;
+  text-decoration: none;
   display: flex;
-}
-.nav-link > a > button {
-  background: inherit;
-  border: none;
-  font-size: 16px;
-  border-radius: 8px;
-}
-.nav-link > a {
-  color: white;
+  flex-direction: column;
+  gap:1.5rem;
+  font-family: roboto;
+  font-weight: 500;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
 }
 
-.sidenav-button:active {
-  background: blue;
-  outline: none;
-  border: 1px solid;
+.side-nav__list-item{
+  /* display: flex; */
+  /* width:100%;
+  margin: 0 auto; */
+}
+.side-nav__list-item:hover{
+  display: flex;
+  border:1px solid 
+  #616164;
+  background-color: 
+  #616164;
+  border-radius:4px;
+  
 }
 
-.nav-icon {
-  padding: 0 20px 0 0;
+.side-nav__link{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+}
+.side-nav__link > p{
+  margin: 0;
+}
+
+.side-nav__link:hover {
+  text-decoration: none;
+}
+
+
+.side-nav__copyright {
+  /* margin: 100px 0 0 0; */
+  justify-self: flex-end;
+}
+.copyright__name{
+  color: pink;
 }
 
 .playbar {
@@ -94,135 +122,112 @@
   background-color: rgb(27, 27, 27);
   height: 10vh;
 }
-.top-search-bar {
+
+.searchbar{
   display: flex;
   align-items: center;
-  padding-bottom: 1rem;
+}
+
+.searchbar__container {
+  display: flex;
+  align-items: center;
   position: relative;
+  width:100%;
 }
-.search-icon {
-  color: white;
-  position: absolute;
-  right: 1rem;
-}
-.top-search-bar > input {
+.searchbar__input {
   width: 100%;
   height: 2rem;
   border-radius: 6px;
   background: #c4c4c426;
   outline: none;
-  color: whitesmoke;
   border: 1px solid #c4c4c426;
 }
-
-.explore-heading {
-  display: flex;
-  color: whitesmoke;
-  font-size: 1rem;
-  font: Montserrat;
-  padding-top: 1.5rem;
+.searchbar__icon {
+  position: absolute;
+  right: 1rem; 
 }
-.square-songs {
+
+.explore-songs__container{
+  display: flex;
+  flex-direction: column;
+}
+.explore-songs__thumbnails-container{
   display: flex;
   justify-content: space-between;
   padding-top: 0.5rem;
-  gap: 0.25rem;
   flex-wrap: wrap;
 }
-.square-songs-child {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  background: wheat;
-}
-.square-songs-child > img {
+
+.explore-songs__thumbnail{
   width: 120px;
   height: 120px;
   border-radius: 8px;
   background: wheat;
 }
 
-.square-songs-child > p {
+.song-name{
   font-size: 16px;
-  font: Montserrat;
   font-weight: 700;
-  color: whitesmoke;
   text-align: start;
+  margin: 0;
 }
 
-.mood-song-heading {
-  display: flex;
-  color: whitesmoke;
-  font-size: 22px;
-  font: Montserrat;
-  padding-top: 4.5rem;
-}
-.home-lower-half {
-  display: flex;
-  justify-content: space-evenly;
-}
-.songs-list {
+.mood__container{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  /* width: 40%; */
-  /* width: 100%; */
-  flex-grow: 3;
-  padding-top: 0.5rem;
-  gap: 0.5rem;
 }
-.songs-list > li {
+
+.mood__interaction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.mood__songs-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+  /* gap: 0.05rem; */
+}
+.mood__list-item {
   list-style: none;
   border: 1px solid #c4c4c426;
   background: #c7c5c526;
-  height: 40px;
   border-radius: 8px;
-  color: #c0c3cabf;
+  text-align: center;
+  height: auto;
+  font-size: 1.5rem;
 }
-.recognize-div {
+.mood__webcam {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* width: 30%; */
-  flex-grow: 2;
+  gap:1rem;
 }
-.webcam {
-  height: 85%;
-  width: 100%;
-  padding-top: 0.5rem;
-}
-.webcam-opt,
-.webcam > img {
-  height: 85%;
+
+.webcam__camera{
+  height: 100%;
   width: 100%;
   border-radius: 8px;
 }
 
-.refresh-button {
+.webcam__button {
   height: 40px;
-  justify-content: flex-end;
-  width: 100%;
-  position: relative;
-  top: -13px;
-}
-.refresh-button > button {
-  height: 40px;
-  justify-content: flex-end;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 8px;
   width: 100%;
   background: inherit;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-color);
+  font-size: 1.5rem;
 }
-.prediction-opt {
-  /* width: 12.5%; */
+
+
+.mood__prediction {
   background: rgba(196, 196, 196, 0.1);
   border-radius: 8px;
-  /* height: 95%; */
-  padding: 1rem;
+  padding: 0 0.75rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  flex-grow: 1;
-  color: rgba(255, 255, 255, 0.75);
 }
