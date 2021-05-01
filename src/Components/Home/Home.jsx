@@ -12,83 +12,82 @@ import Webcam from "react-webcam";
 
 export const Home = () => {
   const videoConstraints = {
-    width: 1280,
-    height: 720,
-    aspectRatio: 0.6666666667
+    // default width:height is 1280px:720px
+    width: 365.71,
+    height: 205.7,
+    aspectRatio: 0.6666666667,
   };
 
   return (
     <div className="home">
-      <div className="top-search-bar">
-        <input placeholder={"Search Music"} type="text" />
-        <FaSearch className="search-icon" size={20} />
+      <div className="searchbar">
+        <div className="searchbar__container">
+          <input
+            placeholder={"Search Music"}
+            type="text"
+            className="searchbar__input"
+          />
+          <FaSearch className="searchbar__icon" size={20} />
+        </div>
       </div>
 
-      <div className="explore-heading">
+      <div className="explore-songs__container">
         <h4>Explore Happy Songs</h4>
+        <div className="explore-songs__thumbnails-container">
+          <div>
+            <img src={img1} alt="" className="explore-songs__thumbnail" />
+            <p className="song-name">Song 1</p>
+          </div>
+          <div>
+            <img src={img2} alt="" className="explore-songs__thumbnail" />
+            <p className="song-name">Song 2</p>
+          </div>
+          <div>
+            <img src={img3} alt="" className="explore-songs__thumbnail" />
+            <p className="song-name">Song 3</p>
+          </div>
+          <div>
+            <img src={img4} alt="" className="explore-songs__thumbnail" />
+            <p className="song-name">Song 4</p>
+          </div>
+          <div>
+            <img src={img5} alt="" className="explore-songs__thumbnail" />
+            <p className="song-name">Song 5</p>
+          </div>
+          <div>
+            <img src={img6} alt="" className="explore-songs__thumbnail" />
+            <p className="song-name">Song 6</p>
+          </div>
+          <div>
+            <img src={img7} alt="" className="explore-songs__thumbnail" />
+            <p className="song-name">Song 7</p>
+          </div>
+        </div>
       </div>
 
-      <div className="square-songs">
-        <div className="square-songs-child">
-          <img src={img1} alt="" />
-          <p>Song 1</p>
-        </div>
-        <div className="square-songs-child">
-          <img src={img2} alt="" />
-          <p>Song 2</p>
-        </div>
-        <div className="square-songs-child">
-          <img src={img3} alt="" />
-          <p>Song 3</p>
-        </div>
-        <div className="square-songs-child">
-          <img src={img4} alt="" />
-          <p>Song 4</p>
-        </div>
-        <div className="square-songs-child">
-          <img src={img5} alt="" />
-          <p>Song 5</p>
-        </div>
-        <div className="square-songs-child">
-          <img src={img6} alt="" />
-          <p>Song 6</p>
-        </div>
-        <div className="square-songs-child">
-          <img src={img7} alt="" />
-          <p>Song 7</p>
-        </div>
-      </div>
-
-      <div className="mood-song-heading">
-        <h4>Songs based on your mood</h4>
-      </div>
-
-      <div className="home-lower-half">
-        <div className="songs-list">
-          <li> song 1 </li>
-          <li> song 2</li>
-          <li> song 3</li>
-          <li>song 4</li>
-          <li>song 5</li>
-        </div>
-        <div className="recognize-div">
-          <div className="webcam">
-            {/* <img src={ch} /> */}
-            {/* <WebcamComponent /> */}
+      <div className="mood__container">
+      <h4>Songs based on your mood</h4>
+        <div className="mood__interaction">
+          <div className="mood__songs-list">
+            <li className="mood__list-item"> song 1 </li>
+            <li className="mood__list-item"> song 2</li>
+            <li className="mood__list-item"> song 3</li>
+            <li className="mood__list-item">song 4</li>
+            <li className="mood__list-item">song 5</li>
+          </div>
+          <div className="mood__webcam">
             <Webcam
               videoConstraints={videoConstraints}
-              className="webcam-opt"
+              className="webcam__camera"
             />
+            <button className="webcam__button">Search Playlist</button>
           </div>
-          <div className="refresh-button">
-            <button>Search Playlist</button>
-          </div>
-        </div>
-        <div className="prediction-opt">
-          <div>
-            <p>Current Mood</p>
-            <p>😊</p>
-            <p>Happy</p>
+          <div className="mood__prediction">
+            <div>
+              <p>Current Mood</p>
+              <p>😊</p>
+              <p>Happy</p>
+            </div>
           </div>
         </div>
       </div>

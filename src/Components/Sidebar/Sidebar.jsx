@@ -7,44 +7,34 @@ import { IoNavigateSharp } from "react-icons/io5";
 export const Sidebar = () => {
   return (
     <div className="side-nav">
+    <div className="sidenav__container-top">
       <div id="logo">
         <img src={Logo} alt="logo" className="sidenav-logo" />
       </div>
-      <ul id="options">
-        <li className="nav-link">
-          <a href="/" className="">
-            <button className="btn btn-secondary btn-sm sidenav-button d-flex">
-              <span className="nav-icon">
-                <FaHome />
-              </span>{" "}
-              Home
-            </button>
+      <ul className="side-nav__list">
+        <li className="side-nav__list-item">
+          <a href="/" className="side-nav__link">
+            <FaHome className="nav-icon" />
+            <p>Home</p>
           </a>
         </li>
-        <li className="nav-link ">
-          <a href="/">
-            <button className="btn btn-secondary btn-sm sidenav-button d-flex">
-              <span className="nav-icon">
-                <BiHeart />
-              </span>{" "}
-              Favourites
-            </button>
+        <li className="side-nav__list-item">
+        <a href="/" className="side-nav__link">
+            <BiHeart className="nav-icon" />
+            <p>Favourite</p>
           </a>
         </li>
-        <li className="nav-link ">
-          <a href="/">
-            <button className="btn btn-secondary btn-sm sidenav-button d-flex">
-              <span className="nav-icon">
-                <IoNavigateSharp />
-              </span>{" "}
-              Near Me
-            </button>
+        <li className="side-nav__list-item">
+        <a href="/" className="side-nav__link">
+            <IoNavigateSharp className="nav-icon" />
+            <p>Near Me</p>
           </a>
         </li>
       </ul>
-      <div id="copyright">
+    </div>
+      <div className="side-nav__copyright">
         <p>
-          Copyright &copy;2021 <span>Moodify</span>
+          Copyright &copy;2021 <span className="copyright__name">Moodify</span>
         </p>
       </div>
     </div>
