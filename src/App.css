@@ -77,17 +77,27 @@ h4 {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  padding: 8px 20px;
+  padding: 10px 25px;
   text-decoration: none;
   font-weight: 400;
   border-radius: 5px;
+  color: var(--test-color);
+  margin: 5px;
+}
+.side-nav__link:hover{
+  color: rgb(248, 248, 250);
+  font-weight: 400 ;
+  background:#59595a;
+  padding:10px 25px 10px ;
+  border: none;
+  
 }
 
 .activeLink{
   color: rgb(248, 248, 250);
   font-weight: 400 ;
   background:#1E35CD;
-  padding:10px 20px 10px ;
+  padding:10px 25px 10px ;
   border: none;
 }
 
