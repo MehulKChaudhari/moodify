@@ -7,10 +7,11 @@ import img4 from "../../Assets/image4.jpeg";
 import img5 from "../../Assets/image5.jpeg";
 import img6 from "../../Assets/image6.jpeg";
 import img7 from "../../Assets/image7.jpeg";
-import ch from "../../Assets/camera-holder.jpeg";
 import Webcam from "react-webcam";
+import { Sidebar } from "../Sidebar/Sidebar";
+import { MusicPlayer } from "../MusicPlayer/MusicPlayer"
 
-export const Home = () => {
+export const Dashboard = () => {
   const videoConstraints = {
     // default width:height is 1280px:720px
     width: 365.71,
@@ -19,6 +20,8 @@ export const Home = () => {
   };
 
   return (
+    <>
+    <Sidebar />
     <div className="home">
       <div className="searchbar">
         <div className="searchbar__container">
@@ -66,7 +69,7 @@ export const Home = () => {
       </div>
 
       <div className="mood__container">
-      <h4>Songs based on your mood</h4>
+        <h4>Songs based on your mood</h4>
         <div className="mood__interaction">
           <div className="mood__songs-list">
             <li className="mood__list-item"> song 1 </li>
@@ -92,5 +95,7 @@ export const Home = () => {
         </div>
       </div>
     </div>
+      {/* <MusicPlayer /> */}
+  </>
   );
 };

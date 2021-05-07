@@ -10,7 +10,7 @@ export const MusicPlayer = () => {
         theme="dark"
         drag={false}
         showThemeSwitch={false}
-        audioLists={[{ duration: 100.0, src: drunkenMonkey }]}
+        // audioLists={ [{musicSrc: drunkenMonkey }]}
       />
       {/* <embed src={drunkenMonkey}/> */}
     </div>

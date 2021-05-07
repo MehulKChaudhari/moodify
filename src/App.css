@@ -1,29 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap");
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-h4{
-  font-family: 'Montserrat', sans-serif;
+body{
+  height: 100vh;
+  background: #0b0d13e5;
+}
+h4 {
+  font-family: "Montserrat", sans-serif;
   color: var(--heading-color);
   text-align: left;
-}
-a{
-  text-decoration: none;
-  color: var(--anchor-color);
-}
-a:hover{
-  color:none;
 }
 
 .main {
   display: flex;
   height: 90vh;
   justify-content: center;
-  background: white;
-  gap: 2px;
 }
 
 .side-nav {
@@ -33,23 +28,19 @@ a:hover{
   flex-grow: 1;
   align-items: center;
   font-family: Roboto;
-  background: #0b0d13e5;
+  border-right: 2px solid white;
   flex-wrap: wrap;
+  height: 90vh;
 }
-.home {
+.home, .near-me, .favourites{
   flex-grow: 3;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background: #0b0d13e5;
   flex-wrap: wrap;
   padding: 2rem 4rem 0 4rem;
   gap: 2rem;
 }
-/* .side-nav,
-.home {
-  height: 100%;
-} */
 
 .sidenav-logo {
   width: 200px;
@@ -57,11 +48,9 @@ a:hover{
   text-align: center;
 }
 
-.sidenav__container-top{
+.sidenav__container-top {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items:center; */
   gap: 3rem;
 }
 
@@ -70,46 +59,42 @@ a:hover{
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  gap:1.5rem;
   font-family: roboto;
   font-weight: 500;
-  align-items: center;
-  /* justify-content: center; */
+  align-items: flex-start;
   width: 100%;
 }
 
-
-.side-nav__list-item:hover{
-  display: flex;
-  border:1px solid 
-  #616164;
-  background-color: 
-  #616164;
-  border-radius:4px;
-  
+.nav-icon{
+  margin-right: 1rem;
+  height: 1rem;
+  width: 1rem;
 }
 
-.side-nav__link{
+.side-nav__link {
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:1.5rem;
-}
-.side-nav__link > p{
-  margin: 0;
-}
-
-.side-nav__link:hover {
+  gap: 1.5rem;
+  padding: 8px 20px;
   text-decoration: none;
+  font-weight: 400;
+  border-radius: 5px;
 }
 
+.activeLink{
+  color: rgb(248, 248, 250);
+  font-weight: 400 ;
+  background:#1E35CD;
+  padding:10px 20px 10px ;
+  border: none;
+}
 
 .side-nav__copyright {
-  /* margin: 100px 0 0 0; */
   justify-self: flex-end;
 }
-.copyright__name{
+.copyright__name {
   color: pink;
 }
 
@@ -119,7 +104,7 @@ a:hover{
   height: 10vh;
 }
 
-.searchbar{
+.searchbar {
   display: flex;
   align-items: center;
 }
@@ -128,7 +113,7 @@ a:hover{
   display: flex;
   align-items: center;
   position: relative;
-  width:100%;
+  width: 100%;
 }
 .searchbar__input {
   width: 100%;
@@ -140,35 +125,35 @@ a:hover{
 }
 .searchbar__icon {
   position: absolute;
-  right: 1rem; 
+  right: 1rem;
 }
 
-.explore-songs__container{
+.explore-songs__container {
   display: flex;
   flex-direction: column;
 }
-.explore-songs__thumbnails-container{
+.explore-songs__thumbnails-container {
   display: flex;
   justify-content: space-between;
   padding-top: 0.5rem;
   flex-wrap: wrap;
 }
 
-.explore-songs__thumbnail{
+.explore-songs__thumbnail {
   width: 120px;
   height: 120px;
   border-radius: 8px;
   background: wheat;
 }
 
-.song-name{
+.song-name {
   font-size: 16px;
   font-weight: 700;
   text-align: start;
   margin: 0;
 }
 
-.mood__container{
+.mood__container {
   display: flex;
   flex-direction: column;
 }
@@ -198,10 +183,10 @@ a:hover{
 .mood__webcam {
   display: flex;
   flex-direction: column;
-  gap:1rem;
+  gap: 1rem;
 }
 
-.webcam__camera{
+.webcam__camera {
   height: 100%;
   width: 100%;
   border-radius: 8px;
@@ -216,7 +201,6 @@ a:hover{
   color: var(--text-color);
   font-size: 1.5rem;
 }
-
 
 .mood__prediction {
   background: rgba(196, 196, 196, 0.1);
