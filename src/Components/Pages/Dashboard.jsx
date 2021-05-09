@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import img1 from "../../Assets/image1.jpg";
 import img2 from "../../Assets/image2.jpeg";
@@ -9,6 +9,10 @@ import img6 from "../../Assets/image6.jpeg";
 import img7 from "../../Assets/image7.jpeg";
 import Webcam from "react-webcam";
 import { Sidebar } from "../Sidebar/Sidebar";
+// <<<<<<< tejas
+// import { MusicPlayer } from "../MusicPlayer/MusicPlayer";
+// =======
+// >>>>>>> master
 
 export const Dashboard = () => {
   const videoConstraints = {
@@ -17,6 +21,19 @@ export const Dashboard = () => {
     height: 205.7,
     aspectRatio: 0.6666666667,
   };
+
+  useEffect(() => {
+    document
+      .getElementsByClassName("music-player-controller-setting")[0]
+      .click();
+  }, []);
+
+  var webCamera = useRef(null);
+
+  const capture = useCallback(() => {
+    const imageSrc = webCamera.current.getScreenshot();
+    // axios.post().then((res) => {});
+  }, [webCamera]);
 
   return (
     <>
@@ -81,8 +98,16 @@ export const Dashboard = () => {
               <Webcam
                 videoConstraints={videoConstraints}
                 className="webcam__camera"
-              />
-              <button className="webcam__button">Search Playlist</button>
+// <<<<<<< tejas
+//                 ref={webCamera}
+//               />
+//               <button className="webcam__button" onClick={capture}>
+//                 Moodify
+//               </button>
+// =======
+//               />
+//               <button className="webcam__button">Search Playlist</button>
+// >>>>>>> master
             </div>
             <div className="mood__prediction">
               <div>
@@ -94,6 +119,10 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
+// <<<<<<< tejas
+//       {/* <MusicPlayer /> */}
+// =======
+// >>>>>>> master
     </>
   );
 };
