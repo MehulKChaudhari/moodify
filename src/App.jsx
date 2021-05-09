@@ -10,6 +10,7 @@ import { MusicPlayer } from "./Components/MusicPlayer/MusicPlayer";
 
 function App() {
   const location = useLocation();
+  
   return (
     <>
       <div>
@@ -23,6 +24,7 @@ function App() {
           </Routes>
         </div>
         {location.pathname !== "/" && <MusicPlayer />}
+        {/* {location.pathname !=="/about-us" && <MusicPlayer />} */}
       </div>
     </>
   );

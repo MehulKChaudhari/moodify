@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const LandingPage = () => {
   return (
-    <div className="">
+    <div className="landing-page">
       <div className="">
         <img src={Logo1} alt="logo" />
       </div>
@@ -16,11 +16,10 @@ export const LandingPage = () => {
         <div className="button-div">
           <Link to="/about-us">
             <button className="">
-              About us{" "}
+              About us
             </button>
           </Link>
           <Link to="/dashboard">
-            {" "}
             <button className="">
               Get Started
             </button>

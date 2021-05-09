@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import img1 from "../../Assets/image1.jpg";
 import img2 from "../../Assets/image2.jpeg";
@@ -9,12 +9,11 @@ import img6 from "../../Assets/image6.jpeg";
 import img7 from "../../Assets/image7.jpeg";
 import Webcam from "react-webcam";
 import { Sidebar } from "../Sidebar/Sidebar";
-// <<<<<<< tejas
-// import { MusicPlayer } from "../MusicPlayer/MusicPlayer";
-// =======
-// >>>>>>> master
+import{ musicContext} from '../../Contexts/musicContext';
 
 export const Dashboard = () => {
+  const [ arr, setArr, apiCall ] = useContext(musicContext);
+
   const videoConstraints = {
     // default width:height is 1280px:720px
     width: 365.71,
@@ -29,11 +28,6 @@ export const Dashboard = () => {
   }, []);
 
   var webCamera = useRef(null);
-
-  const capture = useCallback(() => {
-    const imageSrc = webCamera.current.getScreenshot();
-    // axios.post().then((res) => {});
-  }, [webCamera]);
 
   return (
     <>
@@ -98,16 +92,11 @@ export const Dashboard = () => {
               <Webcam
                 videoConstraints={videoConstraints}
                 className="webcam__camera"
-// <<<<<<< tejas
-//                 ref={webCamera}
-//               />
-//               <button className="webcam__button" onClick={capture}>
-//                 Moodify
-//               </button>
-// =======
-//               />
-//               <button className="webcam__button">Search Playlist</button>
-// >>>>>>> master
+                ref={webCamera}
+              />
+              <button className="webcam__button" onClick={()=> apiCall(webCamera.current.getScreenshot())}>
+                Moodify
+              </button>
             </div>
             <div className="mood__prediction">
               <div>
@@ -119,10 +108,6 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
-// <<<<<<< tejas
-//       {/* <MusicPlayer /> */}
-// =======
-// >>>>>>> master
     </>
   );
 };

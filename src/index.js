@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
+import { musicProvider } from "./Contexts/musicContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <musicProvider>
+        <App />
+      </musicProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
