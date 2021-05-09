@@ -9,7 +9,6 @@ import img6 from "../../Assets/image6.jpeg";
 import img7 from "../../Assets/image7.jpeg";
 import Webcam from "react-webcam";
 import { Sidebar } from "../Sidebar/Sidebar";
-import { MusicPlayer } from "../MusicPlayer/MusicPlayer"
 
 export const Dashboard = () => {
   const videoConstraints = {
@@ -21,81 +20,80 @@ export const Dashboard = () => {
 
   return (
     <>
-    <Sidebar />
-    <div className="home">
-      <div className="searchbar">
-        <div className="searchbar__container">
-          <input
-            placeholder={"Search Music"}
-            type="text"
-            className="searchbar__input"
-          />
-          <FaSearch className="searchbar__icon" size={20} />
-        </div>
-      </div>
-
-      <div className="explore-songs__container">
-        <h4>Explore Happy Songs</h4>
-        <div className="explore-songs__thumbnails-container">
-          <div>
-            <img src={img1} alt="" className="explore-songs__thumbnail" />
-            <p className="song-name">Song 1</p>
-          </div>
-          <div>
-            <img src={img2} alt="" className="explore-songs__thumbnail" />
-            <p className="song-name">Song 2</p>
-          </div>
-          <div>
-            <img src={img3} alt="" className="explore-songs__thumbnail" />
-            <p className="song-name">Song 3</p>
-          </div>
-          <div>
-            <img src={img4} alt="" className="explore-songs__thumbnail" />
-            <p className="song-name">Song 4</p>
-          </div>
-          <div>
-            <img src={img5} alt="" className="explore-songs__thumbnail" />
-            <p className="song-name">Song 5</p>
-          </div>
-          <div>
-            <img src={img6} alt="" className="explore-songs__thumbnail" />
-            <p className="song-name">Song 6</p>
-          </div>
-          <div>
-            <img src={img7} alt="" className="explore-songs__thumbnail" />
-            <p className="song-name">Song 7</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mood__container">
-        <h4>Songs based on your mood</h4>
-        <div className="mood__interaction">
-          <div className="mood__songs-list">
-            <li className="mood__list-item"> song 1 </li>
-            <li className="mood__list-item"> song 2</li>
-            <li className="mood__list-item"> song 3</li>
-            <li className="mood__list-item">song 4</li>
-            <li className="mood__list-item">song 5</li>
-          </div>
-          <div className="mood__webcam">
-            <Webcam
-              videoConstraints={videoConstraints}
-              className="webcam__camera"
+      <Sidebar />
+      <div className="home">
+        <div className="searchbar">
+          <div className="searchbar__container">
+            <input
+              placeholder={"Search Music"}
+              type="text"
+              className="searchbar__input"
             />
-            <button className="webcam__button">Search Playlist</button>
+            <FaSearch className="searchbar__icon" size={20} />
           </div>
-          <div className="mood__prediction">
+        </div>
+
+        <div className="explore-songs__container">
+          <h4>Explore Happy Songs</h4>
+          <div className="explore-songs__thumbnails-container">
             <div>
-              <p>Current Mood</p>
-              <p>😊</p>
-              <p>Happy</p>
+              <img src={img1} alt="" className="explore-songs__thumbnail" />
+              <p className="song-name">Song 1</p>
+            </div>
+            <div>
+              <img src={img2} alt="" className="explore-songs__thumbnail" />
+              <p className="song-name">Song 2</p>
+            </div>
+            <div>
+              <img src={img3} alt="" className="explore-songs__thumbnail" />
+              <p className="song-name">Song 3</p>
+            </div>
+            <div>
+              <img src={img4} alt="" className="explore-songs__thumbnail" />
+              <p className="song-name">Song 4</p>
+            </div>
+            <div>
+              <img src={img5} alt="" className="explore-songs__thumbnail" />
+              <p className="song-name">Song 5</p>
+            </div>
+            <div>
+              <img src={img6} alt="" className="explore-songs__thumbnail" />
+              <p className="song-name">Song 6</p>
+            </div>
+            <div>
+              <img src={img7} alt="" className="explore-songs__thumbnail" />
+              <p className="song-name">Song 7</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mood__container">
+          <h4>Songs based on your mood</h4>
+          <div className="mood__interaction">
+            <div className="mood__songs-list">
+              <li className="mood__list-item"> song 1 </li>
+              <li className="mood__list-item"> song 2</li>
+              <li className="mood__list-item"> song 3</li>
+              <li className="mood__list-item">song 4</li>
+              <li className="mood__list-item">song 5</li>
+            </div>
+            <div className="mood__webcam">
+              <Webcam
+                videoConstraints={videoConstraints}
+                className="webcam__camera"
+              />
+              <button className="webcam__button">Search Playlist</button>
+            </div>
+            <div className="mood__prediction">
+              <div>
+                <p>Current Mood</p>
+                <p>😊</p>
+                <p>Happy</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-      {/* <MusicPlayer /> */}
-  </>
+    </>
   );
 };
