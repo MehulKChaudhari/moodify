@@ -1,17 +1,15 @@
 import { createContext, useState } from "react";
 
-export const musicContext = createContext();
+export const MusicContext = createContext();
 
-export function musicProvider({ children }) {
-    const [arr, setArr] = useState([]);
-    function apiCall (image=null){
+export function MusicProvider({ children }) {
+    const [arr , setArr] = useState([]);
+    function apiCall(image = null) {
         // axios.
     }
   return (
-    <musicContext.Provider value={arr, setArr, apiCall}>
+    <MusicContext.Provider value={(arr, setArr, apiCall)}>
       {children}
-    </musicContext.Provider>
+    </MusicContext.Provider>
   );
 }
-
-

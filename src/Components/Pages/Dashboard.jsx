@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import img1 from "../../Assets/image1.jpg";
 import img2 from "../../Assets/image2.jpeg";
@@ -9,10 +9,10 @@ import img6 from "../../Assets/image6.jpeg";
 import img7 from "../../Assets/image7.jpeg";
 import Webcam from "react-webcam";
 import { Sidebar } from "../Sidebar/Sidebar";
-import{ musicContext} from '../../Contexts/musicContext';
+import { MusicContext } from "../../Contexts/musicContext";
 
 export const Dashboard = () => {
-  const [ arr, setArr, apiCall ] = useContext(musicContext);
+  const {arr, setArr, apiCall} = useContext(MusicContext);
 
   const videoConstraints = {
     // default width:height is 1280px:720px
@@ -94,7 +94,10 @@ export const Dashboard = () => {
                 className="webcam__camera"
                 ref={webCamera}
               />
-              <button className="webcam__button" onClick={()=> apiCall(webCamera.current.getScreenshot())}>
+              <button
+                className="webcam__button"
+                onClick={() => apiCall(webCamera.current.getScreenshot())}
+              >
                 Moodify
               </button>
             </div>

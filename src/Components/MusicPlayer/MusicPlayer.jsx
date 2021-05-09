@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import ReactJkMusicPlayer from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
-import drunkenMonkey from "../../Assets/a.mp3";
-import { musicContext } from '../../Contexts/musicContext'
+// import drunkenMonkey from "../../Assets/a.mp3";
+import { MusicContext } from "../../Contexts/musicContext";
+
 export const MusicPlayer = () => {
-  const [arr, setArr, apiCall] = useContext(musicContext);
+  const {arr, setArr, apiCall } = useContext(MusicContext);
   return (
     <div className="playbar w-100">
       <ReactJkMusicPlayer
