@@ -10,9 +10,8 @@ export const MusicPlayer = () => {
         theme="dark"
         drag={false}
         showThemeSwitch={false}
-        // audioLists={ [{musicSrc: drunkenMonkey }]}
+        audioLists={[{ musicSrc: drunkenMonkey }]}
       />
-      {/* <embed src={drunkenMonkey}/> */}
     </div>
   );
 };

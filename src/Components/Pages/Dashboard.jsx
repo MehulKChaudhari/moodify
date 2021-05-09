@@ -9,7 +9,10 @@ import img6 from "../../Assets/image6.jpeg";
 import img7 from "../../Assets/image7.jpeg";
 import Webcam from "react-webcam";
 import { Sidebar } from "../Sidebar/Sidebar";
-import { MusicPlayer } from "../MusicPlayer/MusicPlayer";
+// <<<<<<< tejas
+// import { MusicPlayer } from "../MusicPlayer/MusicPlayer";
+// =======
+// >>>>>>> master
 
 export const Dashboard = () => {
   const videoConstraints = {
@@ -95,11 +98,16 @@ export const Dashboard = () => {
               <Webcam
                 videoConstraints={videoConstraints}
                 className="webcam__camera"
-                ref={webCamera}
-              />
-              <button className="webcam__button" onClick={capture}>
-                Moodify
-              </button>
+// <<<<<<< tejas
+//                 ref={webCamera}
+//               />
+//               <button className="webcam__button" onClick={capture}>
+//                 Moodify
+//               </button>
+// =======
+//               />
+//               <button className="webcam__button">Search Playlist</button>
+// >>>>>>> master
             </div>
             <div className="mood__prediction">
               <div>
@@ -111,7 +119,10 @@ export const Dashboard = () => {
           </div>
         </div>
       </div>
-      {/* <MusicPlayer /> */}
+// <<<<<<< tejas
+//       {/* <MusicPlayer /> */}
+// =======
+// >>>>>>> master
     </>
   );
 };
