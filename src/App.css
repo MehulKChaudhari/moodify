@@ -225,7 +225,52 @@ h4 {
 
 /* Landing page */ 
 
-landing-page{
+.landing-page__container{
   display: flex;
-  
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+.landing-page__logo{
+  display: flex;
+  justify-self: center;
+  align-self:center;
+  flex-grow: 1;
+  margin: 5rem;
+  flex-wrap: wrap;
+}
+
+.landing-page__tagline{
+  justify-items: center;
+  text-align: center;
+  flex-grow: 2;
+}
+.landing-page__buttons{
+  padding: 10px;
+  text-align: center;
+  margin: 20px;
+}
+
+.landing-page__pri-button{
+  padding: 10px 15px 10px 15px;
+  margin: 15px;
+  color: black;
+  background: rgb(252, 175, 226);
+  border: 2px solid rgb(252, 175, 226);
+}
+
+.landing-page__sec-button{
+  padding: 10px;
+  margin: 20px;
+  color: rgb(252, 175, 226);
+  background: inherit ;
+  border: 2px solid rgb(252, 175, 226);
+}
+
+.tagline{
+  font-family: Roboto;
+}
+.tagline > span{
+  color:rgb(252, 175, 226);
 }
