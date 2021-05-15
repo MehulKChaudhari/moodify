@@ -7,7 +7,9 @@
 }
 body {
   height: 100vh;
-  background: #0b0d13e5;
+  background-image: url(./Assets/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h4 {
   font-family: "Montserrat", sans-serif;
@@ -150,6 +152,17 @@ h4 {
   flex-wrap: wrap;
 }
 
+.song {
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.song:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
 .explore-songs__thumbnail {
   width: 120px;
   height: 120px;
@@ -223,36 +236,36 @@ h4 {
   text-align: center;
 }
 
-/* Landing page */ 
+/* Landing page */
 
-.landing-page__container{
+.landing-page__container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5rem;
   flex-wrap: wrap;
 }
-.landing-page__logo{
+.landing-page__logo {
   display: flex;
   justify-self: center;
-  align-self:center;
+  align-self: center;
   flex-grow: 1;
   margin: 5rem;
   flex-wrap: wrap;
 }
 
-.landing-page__tagline{
+.landing-page__tagline {
   justify-items: center;
   text-align: center;
   flex-grow: 2;
 }
-.landing-page__buttons{
+.landing-page__buttons {
   padding: 10px;
   text-align: center;
   margin: 20px;
 }
 
-.landing-page__pri-button{
+.landing-page__pri-button {
   padding: 10px 15px 10px 15px;
   margin: 15px;
   color: black;
@@ -260,17 +273,17 @@ h4 {
   border: 2px solid rgb(252, 175, 226);
 }
 
-.landing-page__sec-button{
+.landing-page__sec-button {
   padding: 10px;
   margin: 20px;
   color: rgb(252, 175, 226);
-  background: inherit ;
+  background: inherit;
   border: 2px solid rgb(252, 175, 226);
 }
 
-.tagline{
+.tagline {
   font-family: Roboto;
 }
-.tagline > span{
-  color:rgb(252, 175, 226);
+.tagline > span {
+  color: rgb(252, 175, 226);
 }
