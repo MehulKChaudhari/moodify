@@ -23,7 +23,7 @@ function App() {
             <Route path="/near-me" element={<NearMe />} />
           </Routes>
         </div>
-        {location.pathname !== "/"  && <MusicPlayer />}
+        { (location.pathname !== "/" && location.pathname !=="/about-us")  && <MusicPlayer />}
       </div>
     </>
   );
