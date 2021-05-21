@@ -55,10 +55,7 @@ export const Dashboard = () => {
         <div className="explore-songs__container">
           <h4>Explore {mood} Songs</h4>
           <div className="explore-songs__thumbnails-container">
-            <div
-              className="explore-songs__thumbnail arrow-button"
-              style={{ display: currSlice == 0 ? "none" : "" }}
-            >
+            <div className="explore-songs__thumbnail arrow-button">
               <IoIosArrowDropleft onClick={RenderedArrayHandlerDec} />
             </div>
             {arr.slice(currSlice, currSlice + 6).map((song, index) => {
@@ -81,10 +78,7 @@ export const Dashboard = () => {
                 </div>
               );
             })}
-            <div
-              className="explore-songs__thumbnail arrow-button"
-              style={{ display: currSlice >= 6 ? "none" : "" }}
-            >
+            <div className="explore-songs__thumbnail arrow-button">
               <IoIosArrowDropright onClick={RenderedArrayHandlerInc} />
             </div>
           </div>

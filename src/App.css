@@ -103,6 +103,9 @@ h4 {
   padding: 10px 25px 10px;
   border: none;
 }
+.activeLink:hover{
+  background:#1e35cd;
+}
 
 .side-nav__copyright {
   justify-self: flex-end;
@@ -127,6 +130,9 @@ h4 {
   align-items: center;
   position: relative;
   width: 100%;
+}
+input, select, textarea{
+  color: #E5E7EB;
 }
 .searchbar__input {
   width: 100%;
@@ -320,4 +326,8 @@ h4 {
   font-size: 4rem;
   color: var(--text-color);
   background-color: rgba(196, 196, 196, 0.1);
+}
+
+.progress-bar{
+  background-color: transparent;
 }
