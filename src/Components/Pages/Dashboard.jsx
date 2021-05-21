@@ -81,7 +81,10 @@ export const Dashboard = () => {
                 </div>
               );
             })}
-            <div className="explore-songs__thumbnail arrow-button" style={{display: currSlice >=6 ? "none" : ""}}>
+            <div
+              className="explore-songs__thumbnail arrow-button"
+              style={{ display: currSlice >= 6 ? "none" : "" }}
+            >
               <IoIosArrowDropright onClick={RenderedArrayHandlerInc} />
             </div>
           </div>
