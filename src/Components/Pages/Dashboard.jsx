@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import Webcam from "react-webcam";
 import { Sidebar } from "../Sidebar/Sidebar";
@@ -12,6 +12,7 @@ export const Dashboard = () => {
   const [mood, setMood] = useContext(MoodContext);
   const [currSong, setCurrSong] = useContext(CurrentSongContext);
   const [audioIns, setAudioIns] = useContext(AudioInsContext);
+  const [BtnTxt, setBtnTxt] = useState("Moodify")
 
   const videoConstraints = {
     width: 365.71,
@@ -45,7 +46,8 @@ export const Dashboard = () => {
         <div className="explore-songs__container">
           <h4>Explore {mood} Songs</h4>
           <div className="explore-songs__thumbnails-container">
-            {arr.map((song, index) => {
+            {arr.slice(0, 7).map((song, index) => {
+              var nn = song.name.slice(0, 13);
               return (
                 <div
                   key={index}
@@ -57,10 +59,10 @@ export const Dashboard = () => {
                 >
                   <img
                     src={song.cover}
-                    alt={song.name}
+                    alt={song.name.slice(0, 9)}
                     className="explore-songs__thumbnail"
                   />
-                  <p className="song-name">{song.name}</p>
+                  <p className="song-name">{nn}</p>
                 </div>
               );
             })}
@@ -71,7 +73,8 @@ export const Dashboard = () => {
           <h4>Songs based on your mood</h4>
           <div className="mood__interaction">
             <div className="mood__songs-list">
-              {arr.map((song, index) => {
+              {arr.slice(0, 7).map((song, index) => {
+                var nn = song.name.slice(0, 13);
                 return (
                   <li
                     key={index}
@@ -81,7 +84,7 @@ export const Dashboard = () => {
                       audioIns.playByIndex(index);
                     }}
                   >
-                    {song.name}
+                    {nn}
                   </li>
                 );
               })}
@@ -95,9 +98,13 @@ export const Dashboard = () => {
               />
               <button
                 className="webcam__button"
-                onClick={() => apiCall(webCamera.current.getScreenshot())}
+                onClick={async () => {
+                  setBtnTxt("Loading");
+                  await apiCall(webCamera.current.getScreenshot());
+                  setBtnTxt("Moodify");
+                }}
               >
-                Moodify
+                {BtnTxt}
               </button>
             </div>
             <div className="mood__prediction">
