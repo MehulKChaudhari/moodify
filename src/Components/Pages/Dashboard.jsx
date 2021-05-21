@@ -6,13 +6,16 @@ import { MusicContext } from "../../Contexts/musicContext";
 import { MoodContext } from "../../Contexts/moodContext";
 import { CurrentSongContext } from "../../Contexts/currentSong";
 import { AudioInsContext } from "../../Contexts/audioIns";
+import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import { useThree } from "@react-three/fiber";
 
 export const Dashboard = () => {
   const [arr, setArr, apiCall] = useContext(MusicContext);
   const [mood, setMood] = useContext(MoodContext);
   const [currSong, setCurrSong] = useContext(CurrentSongContext);
   const [audioIns, setAudioIns] = useContext(AudioInsContext);
-  const [BtnTxt, setBtnTxt] = useState("Moodify")
+  const [BtnTxt, setBtnTxt] = useState("Moodify");
+  const [currSlice, setSlice] = useState(0);
 
   const videoConstraints = {
     width: 365.71,
@@ -27,6 +30,12 @@ export const Dashboard = () => {
   }, []);
 
   var webCamera = useRef(null);
+  const RenderedArrayHandlerDec = () => {
+    setSlice((prev) => prev - 1);
+  };
+  const RenderedArrayHandlerInc = () => {
+    setSlice((prev) => prev + 1);
+  };
 
   return (
     <>
@@ -46,7 +55,13 @@ export const Dashboard = () => {
         <div className="explore-songs__container">
           <h4>Explore {mood} Songs</h4>
           <div className="explore-songs__thumbnails-container">
-            {arr.slice(0, 7).map((song, index) => {
+            <div
+              className="explore-songs__thumbnail arrow-button"
+              style={{ display: currSlice == 0 ? "none" : "" }}
+            >
+              <IoIosArrowDropleft onClick={RenderedArrayHandlerDec} />
+            </div>
+            {arr.slice(currSlice, currSlice + 6).map((song, index) => {
               var nn = song.name.slice(0, 13);
               return (
                 <div
@@ -66,6 +81,9 @@ export const Dashboard = () => {
                 </div>
               );
             })}
+            <div className="explore-songs__thumbnail arrow-button" style={{display: currSlice >=6 ? "none" : ""}}>
+              <IoIosArrowDropright onClick={RenderedArrayHandlerInc} />
+            </div>
           </div>
         </div>
 
@@ -73,7 +91,7 @@ export const Dashboard = () => {
           <h4>Songs based on your mood</h4>
           <div className="mood__interaction">
             <div className="mood__songs-list">
-              {arr.slice(0, 7).map((song, index) => {
+              {arr.map((song, index) => {
                 var nn = song.name.slice(0, 13);
                 return (
                   <li
