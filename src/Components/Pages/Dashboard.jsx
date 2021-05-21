@@ -8,9 +8,10 @@ import { CurrentSongContext } from "../../Contexts/currentSong";
 import { AudioInsContext } from "../../Contexts/audioIns";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import { useThree } from "@react-three/fiber";
+import { CurveUtils } from "three";
 
 export const Dashboard = () => {
-  const [arr, setArr, apiCall] = useContext(MusicContext);
+  const [arr, setArr, apiCall, arrLength] = useContext(MusicContext);
   const [mood, setMood] = useContext(MoodContext);
   const [currSong, setCurrSong] = useContext(CurrentSongContext);
   const [audioIns, setAudioIns] = useContext(AudioInsContext);
@@ -58,8 +59,8 @@ export const Dashboard = () => {
             <div className="explore-songs__thumbnail arrow-button">
               <IoIosArrowDropleft onClick={RenderedArrayHandlerDec} />
             </div>
-            {arr.slice(currSlice, currSlice + 6).map((song, index) => {
-              var nn = song.name.slice(0, 13);
+            {arr.slice(currSlice%arrLength, (currSlice+6)%arrLength).map((song, index) => {
+              var nn = song.name.slice(0, 13)+`${eval(index)}`;
               return (
                 <div
                   key={index}
