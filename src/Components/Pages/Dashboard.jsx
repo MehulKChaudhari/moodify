@@ -67,8 +67,9 @@ export const Dashboard = () => {
                 <div
                   key={index}
                   onClick={() => {
-                    setCurrSong([...[song]]);
-                    audioIns.playByIndex(index);
+                    setCurrSong([[song]]);
+                    console.log(currSong);
+                    audioIns.playByIndex(0);
                   }}
                   className="song"
                 >
@@ -101,8 +102,8 @@ export const Dashboard = () => {
                     key={index}
                     className="mood__list-item"
                     onClick={() => {
-                      setCurrSong([...[song]]);
-                      audioIns.playByIndex(index);
+                      setCurrSong([song]);
+                      audioIns.playByIndex(0);
                     }}
                   >
                     {nn}
